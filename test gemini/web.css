@@ -1,0 +1,167 @@
+/* ตั้งค่าพื้นฐาน */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    /* *** เพิ่มคุณสมบัติเพื่อให้ body มีความสูงอย่างน้อยเต็มจอ (ถ้าเนื้อหาไม่พอ) *** */
+    min-height: 100vh; 
+    /* *** ใช้ display: flex และ align-items: flex-start เพื่อให้ container เริ่มต้นที่ด้านบน *** */
+    display: flex;
+    align-items: flex-start; /* จัดแนวตั้งให้เริ่มที่ด้านบน */
+}
+
+/* --- โครงสร้างหลัก: Sidebar + Main Content --- */
+.menu-container {
+    display: flex;
+    /* ลบ min-height: 100vh ออกจากที่นี่ */
+    /* background-color: #f0f0f0; /* คุณอาจเพิ่มสีพื้นหลังสำหรับ container ทั้งหมดถ้าต้องการ */
+    width: 100%; /* ให้ container ใช้ความกว้างเต็มที่ */
+    /* align-items: flex-start; /* จัดแนวตั้งให้เริ่มที่ด้านบน (ซ้ำกับ body แต่ใส่ไว้เพื่อความชัวร์ถ้า body ไม่ใช่ flex) */
+}
+
+/* --- Sidebar (แถบเมนูแนวตั้ง) --- */
+.sidebar {
+    width: 200px; /* ความกว้างของแถบเมนูข้าง */
+    background-color: #FF9933; /* สีพื้นหลังส้ม */
+    border-right: 5px solid #800080;
+    padding-top: 50px;
+    color: #000;
+    flex-shrink: 0; 
+    /* *** ลบ min-height หรือ height ที่เคยทำให้มันสูงเต็มจอออกไป *** */
+    /* *** เพิ่ม padding-bottom เพื่อให้มีช่องว่างด้านล่างของ sidebar (ถ้าจำเป็น) *** */
+    padding-bottom: 20px; /* สามารถปรับค่าได้ */
+    /* เพิ่ม border-bottom: 5px solid #800080; ถ้าต้องการให้เส้นม่วงปิดด้านล่าง */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    padding: 15px 15px;
+    margin: 10px 0;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1em;
+    border-radius: 5px;
+}
+
+.sidebar li.active {
+    background-color: #FFCC99;
+    border: 3px solid #800080;
+    color: #000;
+}
+
+.sidebar li:not(.active) {
+    background-color: #FFCC66;
+    border: 3px solid #FFCC66;
+}
+
+/* --- Main Content (ส่วนแสดงรายการอาหารหลัก) --- */
+.main-content {
+    flex-grow: 1; 
+    padding: 20px;
+}
+
+.main-title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+/* --- Grid Layout สำหรับรายการอาหาร --- */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px; 
+    justify-items: center; 
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* สไตล์ของแต่ละรายการอาหาร */
+.menu-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 250px;
+    box-sizing: border-box;
+}
+
+.menu-item img {
+    width: 100%;
+    height: auto;
+    max-height: 150px;
+    object-fit: cover;
+    border: 1px solid #000;
+    margin-bottom: 10px;
+}
+
+.item-details {
+    padding: 5px 0;
+}
+
+.menu-name {
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.price {
+    color: #800080;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.order-btn {
+    background-color: #FF9933;
+    color: #000;
+    border: 1px solid #000;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* สำหรับการแสดงผลบนมือถือ */
+@media (max-width: 768px) {
+    body {
+        /* ยกเลิก display: flex และ align-items: flex-start สำหรับ body บนมือถือ */
+        display: block; 
+        align-items: stretch;
+    }
+    .menu-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 5px solid #800080;
+        padding-top: 10px;
+    }
+    
+    .sidebar ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .sidebar li {
+        margin: 5px;
+        padding: 10px 15px;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .menu-item {
+        max-width: 300px;
+    }
+}

@@ -69,3 +69,30 @@ nav {
     
 }
 
+.boxbig {
+    max-width: 1190px;
+    margin: 0 auto;
+
+}
+
+.box-2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+h4 {
+    text-align: center;
+}
+
+.img img {
+    width: 100%;
+}
+
+.box1 {
+    background-color: #e46e0d;
+    width: ;
+    height: 200px;
+}
