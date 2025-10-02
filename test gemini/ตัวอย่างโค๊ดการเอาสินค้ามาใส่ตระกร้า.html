@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>ร้านอาหารออนไลน์</title>
+  <style>
+    body { font-family: sans-serif; }
+    .menu { margin-bottom: 10px; }
+    .cart { margin-top: 20px; border: 1px solid black; padding: 10px; }
+  </style>
+</head>
+<body>
+  <h1>เมนูอาหาร</h1>
+  
+  <!-- เมนูอาหาร -->
+  <div class="menu">
+    <span>ข้าวผัด - 50 บาท</span>
+    <button onclick="addToCart('ข้าวผัด', 50)">เพิ่ม</button>
+  </div>
+  <div class="menu">
+    <span>ก๋วยเตี๋ยว - 60 บาท</span>
+    <button onclick="addToCart('ก๋วยเตี๋ยว', 60)">เพิ่ม</button>
+  </div>
+  <div class="menu">
+    <span>ส้มตำ - 40 บาท</span>
+    <button onclick="addToCart('ส้มตำ', 40)">เพิ่ม</button>
+  </div>
+
+  <!-- แสดงตะกร้า -->
+  <div class="cart">
+    <h2>ตะกร้าของคุณ</h2>
+    <ul id="cart-list"></ul>
+    <p id="total">ราคารวม: 0 บาท</p>
+  </div>
+
+  <script>
+    let cart = []; // เก็บรายการอาหาร
+
+    function addToCart(name, price) {
+      // เพิ่มอาหารเข้า array
+      cart.push({ name: name, price: price });
+
+      // อัปเดตตะกร้า
+      renderCart();
+    }
+
+    function renderCart() {
+      const cartList = document.getElementById('cart-list');
+      const totalText = document.getElementById('total');
+
+      cartList.innerHTML = ""; // ล้างรายการเก่า
+      let total = 0;
+
+      cart.forEach(item => {
+        let li = document.createElement('li');
+        li.textContent = `${item.name} - ${item.price} บาท`;
+        cartList.appendChild(li);
+        total += item.price;
+      });
+
+      totalText.textContent = "ราคารวม: " + total + " บาท";
+    }
+  </script>
+</body>
+</html>
+
+</body>
+</html>

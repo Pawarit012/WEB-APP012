@@ -109,7 +109,9 @@ h4 {
 .mode li a {
     text-decoration: none;
     color: black;
-    
+    border-radius: 10px;
+    background-color: rgb(230, 216, 34);
+    padding: 5px;
     
 }
 
@@ -127,5 +129,22 @@ h4 {
 }
 
 .box-item {
-    
+    border: solid black;
+}
+
+.box-item img {
+    padding: 1rem;
+}
+
+.detail {
+    padding: .5rem;
+}
+
+.price {
+    padding: .5rem;
+}
+
+.add-the-cart {
+    text-align: end;
+    padding: .5rem;
 }
