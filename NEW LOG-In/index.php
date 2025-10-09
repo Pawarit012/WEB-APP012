@@ -1,3 +1,7 @@
+<?php include('/NEW LOG-In/server,php');?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +14,7 @@
 <body>
     
     <h1> hello php</h1>
+    
 
 </body>
 </html>
