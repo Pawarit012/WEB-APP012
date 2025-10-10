@@ -1,7 +1,4 @@
-<?php include('/NEW LOG-In/server,php');?>
-
-
-
+<?php include('server.php');?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
