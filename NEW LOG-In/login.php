@@ -22,24 +22,14 @@
         </div>
 
         <div class="input-gruup">
-            <label for="email">email</label>
-            <input type="email" name='email' >
+            <label for="password">Password</label>
+            <input type="password" name='password' >
         </div>
 
         <div class="input-gruup">
-            <label for="password_1">password</label>
-            <input type="password" name='password_1' >
+            <button type="submit"name ="login_user " class="btn" >Register</button>
         </div>
-
-        <div class="input-gruup">
-            <label for="password_2">Confrim Password</label>
-            <input type="password" name='password_2' >
-        </div>
-
-        <div class="input-gruup">
-            <button type="submit"name ="req_user " class="btn" >Register</button>
-        </div>
-        <p>Already a member? <a href="login.php">Sign in</a></p>
+        <p>Not yet a member? <a href="register.php">Sign up</a></p>
 
     </form>
     
