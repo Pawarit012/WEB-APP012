@@ -21,10 +21,10 @@
             <input type="text" name='username' >
         </div>
 
-        <div class="input-group">
+        <!-- <div class="input-group">
             <label for="Tel.">Tel.</label>
             <input type="tel" name='Tel.' >
-        </div>
+        </div> -->
 
         <div class="input-group">
             <label for="email">email</label>

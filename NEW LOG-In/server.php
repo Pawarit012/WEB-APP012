@@ -2,7 +2,7 @@
 
     $servername = 'localhost';
     $username ='root';
-    $password = '';
+    $password = '';  
     $dbname ='WEBAPP012';
 
     //create connection

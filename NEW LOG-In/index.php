@@ -31,6 +31,19 @@
     </div>
 
     <div class="content">
+
+        <!--notification massage  -->
+        <?php if (isset($_SESSION['success'])) : ?>
+            <div class="success">
+                <h3>
+                    <?php
+                        echo $_SESSION['success'];
+                        unset($_SESSION['success']);
+                    ?>
+                </h3>
+            </div>
+        <?php endif ?>
+
         <!-- loggen in user information -->
          <?php if(isset($_SESSION['username'])) :  ?>
             <p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
