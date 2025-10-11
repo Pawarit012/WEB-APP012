@@ -1,6 +1,6 @@
 <?php $error = array(); ?>
 <?php if (count($error) > 0 ) : ?>
-    <div class="err">
+    <div class="error">
         <?php foreach ($error as $error) : ?>
             <p><?php echo $error ?></p>
         <?php endforeach?>

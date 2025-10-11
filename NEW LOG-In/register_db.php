@@ -26,7 +26,7 @@
         if ($password_1 != $password_2)
             array_push($error, 'the to passwords do not match');
 
-        $user_chaek_query = "SELECT * FROM user WHERE username = '$username' OR email = '$email' ";
+        $user_check_query = "SELECT * FROM user WHERE username = '$username' OR email = '$email' ";
         $query = mysqli_query($conn, $user_chaek_query);
         $result = mysqli_fetch_assoc($query);
 
@@ -48,7 +48,7 @@
 
 
             $_SESSION['username'] = $username ;
-            $_SESSION['success'] = "YOUR are now loggen in" ;
+            $_SESSION['success'] = "Your are now loggen in" ;
             header('location:index.php');
         }
     }
